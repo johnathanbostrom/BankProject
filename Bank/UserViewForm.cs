@@ -17,6 +17,14 @@ namespace Bank
         {
             InitializeComponent();
             Manager = userAccountManager;
+            UX_AccountsList.DataSource = Manager.Accounts;
+        }
+
+        private void UX_AddAccountButton_Click(object sender, EventArgs e)
+        {
+            AccountCreationForm acf = new AccountCreationForm();
+            DialogResult accountCreationResult = acf.ShowDialog();
+
         }
     }
 }

@@ -9,12 +9,17 @@ namespace Bank
     {
         private User _userAccount;
 
+        public readonly List<IAccount> Accounts; 
 
         public UserAccountManager(User u)
         {
             _userAccount = u;
+            Accounts = u.Accounts;
         }
 
-
+        public void AddAccount(IAccount account)
+        {
+            Accounts.Add(account);  
+        }
     }
 }

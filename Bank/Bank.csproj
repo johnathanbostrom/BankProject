@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountCreationForm.Designer.cs">
+      <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountManager.cs" />
     <Compile Include="BankManager.cs" />
     <Compile Include="UserAccountManager.cs" />
@@ -71,6 +77,9 @@
       <DependentUpon>UserViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Withdrawal.cs" />
+    <EmbeddedResource Include="AccountCreationForm.resx">
+      <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +92,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserViewForm.resx">
+      <DependentUpon>UserViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

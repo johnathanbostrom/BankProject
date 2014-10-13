@@ -17,6 +17,10 @@ namespace Bank
 
         public void LoadUserData()
         {
+            User u1 = new User(new Guid(),"Bob", new List<IAccount>(),"abc");
+            User u2 = new User(new Guid(), "Ben", new List<IAccount>(), "123");
+            userDictionary.Add(u1.UserName, u1);
+            userDictionary.Add(u2.UserName, u2);
             //load user data
         }
 

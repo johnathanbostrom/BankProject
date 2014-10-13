@@ -10,7 +10,8 @@ namespace Bank
     {
         public Guid Id { get; private set; }
         public string UserName { get; private set; }
-        public List<IAccount> Accounts;
+        //exposing accounts to UserAccountManager makes it easier set the DataSource of a listbox.  It is readonly, so this should be safe.
+        public readonly List<IAccount> Accounts;
         private string _password;
 
         public User(Guid id, string name, List<IAccount> accounts, string password)
