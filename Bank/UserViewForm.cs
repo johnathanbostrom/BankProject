@@ -9,11 +9,14 @@ using System.Windows.Forms;
 
 namespace Bank
 {
-    public partial class Form1 : Form
+    public partial class UserViewForm : Form
     {
-        public Form1()
+        public UserAccountManager Manager;
+
+        public UserViewForm(UserAccountManager userAccountManager)
         {
             InitializeComponent();
+            Manager = userAccountManager;
         }
     }
 }

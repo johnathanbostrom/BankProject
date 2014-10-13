@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Bank
 {
-    interface IAccount
+    public interface IAccount
     {
         Guid AccountID { get; }
         double Balance { get; }

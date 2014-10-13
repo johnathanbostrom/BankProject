@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Bank
 {
-    class User
+    public class User
     {
         public Guid Id { get; private set; }
         public string UserName { get; private set; }

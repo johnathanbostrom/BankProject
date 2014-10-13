@@ -6,13 +6,18 @@ using System.Text;
 
 namespace Bank
 {
-    class BankManager
+    public class BankManager
     {
         private Dictionary<string, User> userDictionary;
 
         public BankManager()
         {
-            //load all user data
+            userDictionary = new Dictionary<string, User>();
+        }
+
+        public void LoadUserData()
+        {
+            //load user data
         }
 
         public UserAccountManager GetUser(string userId, string password)

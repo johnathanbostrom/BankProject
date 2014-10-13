@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bank
 {
-    interface ITransaction
+    public interface ITransaction
     {
     }
 }

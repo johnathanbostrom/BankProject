@@ -1,0 +1,7 @@
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\bin\Debug\Bank.exe
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\bin\Debug\Bank.pdb
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.Properties.Resources.resources
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.csproj.GenerateResource.Cache
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.exe
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.pdb
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.LoginForm.resources

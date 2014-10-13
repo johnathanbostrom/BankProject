@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Bank
 {
-    class UserAccountManager
+    public class UserAccountManager
     {
-        private User userAccount;
+        private User _userAccount;
 
 
         public UserAccountManager(User u)
         {
-            userAccount = u;
+            _userAccount = u;
         }
 
 
