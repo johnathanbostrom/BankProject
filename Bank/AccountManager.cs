@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Bank
 {
-    class BankData
+    class AccountManager
     {
+
     }
 }
