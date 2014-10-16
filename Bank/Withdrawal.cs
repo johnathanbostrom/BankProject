@@ -6,6 +6,7 @@ using Microsoft.Win32;
 
 namespace Bank
 {
+    [Serializable]
     class Withdrawal: ITransaction
     {
         public DateTime Time { get; private set; }

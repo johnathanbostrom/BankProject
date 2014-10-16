@@ -29,7 +29,7 @@ namespace Bank
         {
             try
             {
-                Manager.GetUser(UX_UserNameTextBox.Text, UX_PasswordBox.Text);
+                Manager.OpenUserView(UX_UserNameTextBox.Text, UX_PasswordBox.Text);
             }
             catch (UserInputException exception)
             {

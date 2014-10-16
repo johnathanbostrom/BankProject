@@ -59,6 +59,7 @@
     <Compile Include="AccountViewForm.Designer.cs">
       <DependentUpon>AccountViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BankData.cs" />
     <Compile Include="BankManager.cs" />
     <Compile Include="TransferForm.cs">
       <SubType>Form</SubType>

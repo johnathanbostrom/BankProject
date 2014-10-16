@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Bank
 {
+    [Serializable]
     internal class Savings : IAccount
     {
         public Guid AccountID { get; private set; }

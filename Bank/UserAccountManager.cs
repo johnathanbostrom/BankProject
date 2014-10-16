@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Bank
 {
+    [Serializable]
     public class UserAccountManager
     {
         private User _userAccount;

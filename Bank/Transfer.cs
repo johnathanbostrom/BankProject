@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Bank
 {
+    [Serializable]
     class Transfer: ITransaction
     {
         public DateTime Time { get; private set; }
