@@ -7,5 +7,8 @@ namespace Bank
 {
     public interface ITransaction
     {
+        DateTime Time { get; }
+        Double Amount { get; }
+        string Description { get; set; }
     }
 }

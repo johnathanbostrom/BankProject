@@ -29,7 +29,12 @@ namespace Bank
         }
         public void AddTransactionHistory(ITransaction transaction)
         {
-            throw new NotImplementedException();
+            TransactionHistory.Add(transaction);
+        }
+
+        public override string ToString()
+        {
+            return "ID: " + AccountID + " Balance: " + Balance;
         }
     }
 }

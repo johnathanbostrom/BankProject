@@ -11,37 +11,50 @@ namespace Bank
         private IAccount _account;
         private BankManager _bankManager;
         public List<ITransaction> Transactions;
-        public double Balance { get; set; }
+        public double Balance
+        {
+            get
+            {
+                return _account.Balance;
+            }
+        }
 
         public AccountManager(IAccount account, BankManager bankManager)
         {
             _account = account;
             Transactions = _account.TransactionHistory;
-            Balance = _account.Balance;
             _bankManager = bankManager;
         }
 
-        //deposit specified amount and then return the new balance.
+        //deposit specified Amount and then return the new balance.
         public double Deposit(double d)
         {
             _account.Balance += d;
+            Bank.Deposit transaction = new Deposit(DateTime.Now,d,"");
+            _account.AddTransactionHistory(transaction);
             return _account.Balance;
         }
 
-        //withdraw the specified amount and return the new balance.
+        //withdraw the specified Amount and return the new balance.
         public double Withdraw(double d)
         {
             if(_account.Balance < d)
-                throw new UserInputException("You may not withdraw a greater amount than the balance of this account.");
+                throw new UserInputException("You may not withdraw a greater Amount than the balance of this account.");
             _account.Balance -= d;
+            Withdrawal transaction = new Withdrawal(DateTime.Now, d, "");
+            _account.AddTransactionHistory(transaction);
             return _account.Balance;
         }
 
         public double Transfer(double amount, Guid accountID)
         {
             if(_account.Balance < amount)
-                throw new UserInputException("You may not Transfer a greater amount than the balance of this account.");
-            return 0;
+                throw new UserInputException("You may not Transfer a greater Amount than the balance of this account.");
+            _bankManager.getAccount(accountID).Balance += amount;
+            _account.Balance -= amount;
+            Bank.Transfer transaction = new Transfer(DateTime.Now, amount, "");
+            _account.AddTransactionHistory(transaction);
+            return _account.Balance;
         }
     }
 }

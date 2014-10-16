@@ -29,7 +29,7 @@ namespace Bank
 
         public void AddTransactionHistory(ITransaction transaction)
         {
-            throw new NotImplementedException();
+            TransactionHistory.Add(transaction);
         }
 
 
