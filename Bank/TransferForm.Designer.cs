@@ -113,6 +113,7 @@
             this.UX_OKButton.TabIndex = 0;
             this.UX_OKButton.Text = "Transfer";
             this.UX_OKButton.UseVisualStyleBackColor = true;
+            this.UX_OKButton.Click += new System.EventHandler(this.UX_OKButton_Click);
             // 
             // UX_CancelButton
             // 
@@ -123,6 +124,7 @@
             this.UX_CancelButton.TabIndex = 1;
             this.UX_CancelButton.Text = "Cancel";
             this.UX_CancelButton.UseVisualStyleBackColor = true;
+            this.UX_CancelButton.Click += new System.EventHandler(this.UX_CancelButton_Click);
             // 
             // tableLayoutPanel3
             // 

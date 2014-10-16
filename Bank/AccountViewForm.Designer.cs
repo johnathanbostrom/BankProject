@@ -109,6 +109,7 @@
             this.UX_transferButton.TabIndex = 2;
             this.UX_transferButton.Text = "Transfer";
             this.UX_transferButton.UseVisualStyleBackColor = true;
+            this.UX_transferButton.Click += new System.EventHandler(this.UX_transferButton_Click);
             // 
             // tableLayoutPanel1
             // 

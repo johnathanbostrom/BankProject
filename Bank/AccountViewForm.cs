@@ -49,5 +49,10 @@ namespace Bank
             UX_BalanceLabel.Text = "Balance: " + d;
         }
 
+        private void UX_transferButton_Click(object sender, EventArgs e)
+        {
+            Manager.Transfer();
+        }
+
     }
 }

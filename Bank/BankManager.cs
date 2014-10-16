@@ -65,5 +65,10 @@ namespace Bank
             return account;
         }
 
+        public List<Guid> getAccountIDs()
+        {
+            return accounts.Keys.ToList();
+        }
+
     }
 }

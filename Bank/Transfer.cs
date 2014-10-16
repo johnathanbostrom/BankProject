@@ -11,12 +11,16 @@ namespace Bank
         public DateTime Time { get; private set; }
         public double Amount { get; private set; }
         public string Description { get; set; }
+        public Guid From;
+        public Guid To;
 
-        public Transfer(DateTime time, double amount, string description)
+        public Transfer(DateTime time, double amount, Guid from, Guid to, string description)
         {
             Time = time;
             Amount = amount;
             Description = description;
+            From = from;
+            To = to;
         }
     }
 }

@@ -60,6 +60,12 @@
       <DependentUpon>AccountViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BankManager.cs" />
+    <Compile Include="TransferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferForm.Designer.cs">
+      <DependentUpon>TransferForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAccountManager.cs" />
     <Compile Include="Checking.cs" />
     <Compile Include="Deposit.cs" />
@@ -102,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TransferForm.resx">
+      <DependentUpon>TransferForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserViewForm.resx">
       <DependentUpon>UserViewForm.cs</DependentUpon>
     </EmbeddedResource>
