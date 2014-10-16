@@ -30,6 +30,7 @@ namespace Bank
         private void UX_depositButton_Click(object sender, EventArgs e)
         {
             UpdateBalanceLabel(Manager.Deposit(10));
+            
         }
 
         private void ux_withrawButton_Click(object sender, EventArgs e)
@@ -51,7 +52,14 @@ namespace Bank
 
         private void UX_transferButton_Click(object sender, EventArgs e)
         {
-            Manager.Transfer();
+            try
+            {
+                Manager.Transfer();
+            }
+            catch (UserInputException uie)
+            {
+                MessageBox.Show(uie.Message);
+            }
         }
 
     }

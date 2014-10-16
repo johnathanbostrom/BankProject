@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Bank
 {
     public class BankManager
     {
         private Dictionary<string, User> userDictionary;
-        private Dictionary<Guid, IAccount> accounts; 
+        private Dictionary<Guid, IAccount> accounts;
 
         public BankManager()
         {
@@ -68,6 +71,26 @@ namespace Bank
         public List<Guid> getAccountIDs()
         {
             return accounts.Keys.ToList();
+        }
+
+        public void Save()
+        {
+            Task.Factory.StartNew(SaveAsXml);
+        }
+
+        private void SaveAsXml()
+        {
+
+            
+            var writer = new System.Xml.Serialization.XmlSerializer(typeof(List<User>));
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"c:\temp\SerializationOverview.xml");
+            writer.Serialize(file,userDictionary.ToList());
+            file.Close();/*
+            XElement xml = new XElement(
+                    "items",
+                    userDictionary.Select(x => new XElement("item", new XAttribute("id", x.Key), new XAttribute("value", x.Value)))
+                 );
+            MessageBox.Show(xml.ToString());*/
         }
 
     }

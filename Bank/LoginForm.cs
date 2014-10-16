@@ -14,11 +14,10 @@ namespace Bank
     {
         public BankManager Manager;
 
-        public LoginForm()
+        public LoginForm(BankManager manager)
         {
             InitializeComponent();
-            Manager = new BankManager();
-            Manager.LoadUserData();
+            Manager = manager;
         }
 
         private void Form1_Load(object sender, EventArgs e)

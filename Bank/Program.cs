@@ -16,14 +16,9 @@ namespace Bank
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                Application.Run(new LoginForm());
-            }
-            catch (UserInputException uie)
-            {
-                MessageBox.Show(uie.Message);
-            }
+            BankManager manager = new BankManager();
+            manager.LoadUserData();
+            Application.Run(new LoginForm(manager));
         }
 
     }

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Bank
 {
     public class User
     {
-        public Guid Id { get; private set; }
-        public string UserName { get; private set; }
-        //exposing accounts to UserAccountManager makes it easier set the DataSource of a listbox.  It is readonly, so this should be safe.
-        public readonly List<IAccount> Accounts;
+        public Guid Id { get; set; }
+        public string UserName { get; set; }
+        public List<IAccount> Accounts;
         private string _password;
 
         public User(Guid id, string name, List<IAccount> accounts, string password)
@@ -21,6 +21,9 @@ namespace Bank
             Accounts = accounts;
             _password = password;
         }
+
+        //needed for serialization
+        internal User(){}
 
         public bool CheckPassword(string pass)
         {
