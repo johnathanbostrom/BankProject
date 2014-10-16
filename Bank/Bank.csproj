@@ -53,6 +53,12 @@
       <DependentUpon>AccountCreationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountManager.cs" />
+    <Compile Include="AccountViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountViewForm.Designer.cs">
+      <DependentUpon>AccountViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankManager.cs" />
     <Compile Include="UserAccountManager.cs" />
     <Compile Include="Checking.cs" />
@@ -70,6 +76,7 @@
     <Compile Include="Savings.cs" />
     <Compile Include="Transfer.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserInputException.cs" />
     <Compile Include="UserViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +86,9 @@
     <Compile Include="Withdrawal.cs" />
     <EmbeddedResource Include="AccountCreationForm.resx">
       <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountViewForm.resx">
+      <DependentUpon>AccountViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

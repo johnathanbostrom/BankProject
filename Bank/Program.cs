@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Bank
@@ -15,7 +16,15 @@ namespace Bank
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            try
+            {
+                Application.Run(new LoginForm());
+            }
+            catch (UserInputException uie)
+            {
+                MessageBox.Show(uie.Message);
+            }
         }
+
     }
 }

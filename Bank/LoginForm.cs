@@ -30,10 +30,9 @@ namespace Bank
         {
             try
             {
-                UserAccountManager uam = Manager.GetUser(UX_UserNameTextBox.Text, UX_PasswordBox.Text);
-                new UserViewForm(uam).Show();
+                Manager.GetUser(UX_UserNameTextBox.Text, UX_PasswordBox.Text);
             }
-            catch (Exception exception)
+            catch (UserInputException exception)
             {
                 MessageBox.Show(exception.Message);
             }

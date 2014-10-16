@@ -22,8 +22,38 @@ namespace Bank
 
         private void UX_AddAccountButton_Click(object sender, EventArgs e)
         {
-            AccountCreationForm acf = new AccountCreationForm();
-            DialogResult accountCreationResult = acf.ShowDialog();
+            try
+            {
+                Manager.AddAccount();
+            }
+            catch (UserInputException uie)
+            {
+                MessageBox.Show(uie.Message);
+            }
+        }
+
+        private void UX_RemoveAccountButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IAccount account = (IAccount) UX_AccountsList.SelectedItem; //not safe.  Is there a way to constrain the type of items that can be added to a list box?
+                Manager.RemoveAccount(account);
+            }
+            catch (UserInputException uie)
+            {
+                MessageBox.Show(uie.Message);
+            }
+        }
+
+        private void UX_AccountsList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (UX_AccountsList.SelectedItem == null)
+                return;
+            Manager.GetAccount((IAccount)UX_AccountsList.SelectedItem);
+        }
+
+        private void UX_AccountsList_DoubleClick(object sender, EventArgs e)
+        {
 
         }
     }

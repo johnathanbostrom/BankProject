@@ -7,3 +7,5 @@ C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\B
 C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.LoginForm.resources
 C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.UserViewForm.resources
 C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.AccountCreationForm.resources
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.csprojResolveAssemblyReference.cache
+C:\Users\Orrosta\Documents\Visual Studio 2010\Projects\Bank\Bank\obj\x86\Debug\Bank.AccountViewForm.resources

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.UX_AccountsList = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.UX_AddAccountButton = new System.Windows.Forms.Button();
             this.UX_RemoveAccountButton = new System.Windows.Forms.Button();
             this.UX_SettingsButton = new System.Windows.Forms.Button();
+            this.UX_AddAccountButton = new System.Windows.Forms.Button();
+            this.UX_AccountsList = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,15 +58,6 @@
             this.splitContainer1.SplitterDistance = 168;
             this.splitContainer1.TabIndex = 0;
             // 
-            // UX_AccountsList
-            // 
-            this.UX_AccountsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UX_AccountsList.FormattingEnabled = true;
-            this.UX_AccountsList.Location = new System.Drawing.Point(0, 0);
-            this.UX_AccountsList.Name = "UX_AccountsList";
-            this.UX_AccountsList.Size = new System.Drawing.Size(475, 290);
-            this.UX_AccountsList.TabIndex = 0;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -84,6 +75,25 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(168, 290);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // UX_RemoveAccountButton
+            // 
+            this.UX_RemoveAccountButton.Location = new System.Drawing.Point(3, 99);
+            this.UX_RemoveAccountButton.Name = "UX_RemoveAccountButton";
+            this.UX_RemoveAccountButton.Size = new System.Drawing.Size(162, 23);
+            this.UX_RemoveAccountButton.TabIndex = 1;
+            this.UX_RemoveAccountButton.Text = "Close Account";
+            this.UX_RemoveAccountButton.UseVisualStyleBackColor = true;
+            this.UX_RemoveAccountButton.Click += new System.EventHandler(this.UX_RemoveAccountButton_Click);
+            // 
+            // UX_SettingsButton
+            // 
+            this.UX_SettingsButton.Location = new System.Drawing.Point(3, 195);
+            this.UX_SettingsButton.Name = "UX_SettingsButton";
+            this.UX_SettingsButton.Size = new System.Drawing.Size(162, 23);
+            this.UX_SettingsButton.TabIndex = 2;
+            this.UX_SettingsButton.Text = "Account Settings";
+            this.UX_SettingsButton.UseVisualStyleBackColor = true;
+            // 
             // UX_AddAccountButton
             // 
             this.UX_AddAccountButton.Location = new System.Drawing.Point(3, 3);
@@ -94,23 +104,16 @@
             this.UX_AddAccountButton.UseVisualStyleBackColor = true;
             this.UX_AddAccountButton.Click += new System.EventHandler(this.UX_AddAccountButton_Click);
             // 
-            // UX_RemoveAccountButton
+            // UX_AccountsList
             // 
-            this.UX_RemoveAccountButton.Location = new System.Drawing.Point(3, 99);
-            this.UX_RemoveAccountButton.Name = "UX_RemoveAccountButton";
-            this.UX_RemoveAccountButton.Size = new System.Drawing.Size(162, 23);
-            this.UX_RemoveAccountButton.TabIndex = 1;
-            this.UX_RemoveAccountButton.Text = "Close Account";
-            this.UX_RemoveAccountButton.UseVisualStyleBackColor = true;
-            // 
-            // UX_SettingsButton
-            // 
-            this.UX_SettingsButton.Location = new System.Drawing.Point(3, 195);
-            this.UX_SettingsButton.Name = "UX_SettingsButton";
-            this.UX_SettingsButton.Size = new System.Drawing.Size(162, 23);
-            this.UX_SettingsButton.TabIndex = 2;
-            this.UX_SettingsButton.Text = "Account Settings";
-            this.UX_SettingsButton.UseVisualStyleBackColor = true;
+            this.UX_AccountsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UX_AccountsList.FormattingEnabled = true;
+            this.UX_AccountsList.Location = new System.Drawing.Point(0, 0);
+            this.UX_AccountsList.Name = "UX_AccountsList";
+            this.UX_AccountsList.Size = new System.Drawing.Size(475, 290);
+            this.UX_AccountsList.TabIndex = 0;
+            this.UX_AccountsList.DoubleClick += new System.EventHandler(this.UX_AccountsList_DoubleClick);
+            this.UX_AccountsList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.UX_AccountsList_MouseDoubleClick);
             // 
             // UserViewForm
             // 
