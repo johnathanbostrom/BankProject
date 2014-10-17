@@ -49,7 +49,7 @@ namespace Bank
         {
             if (UX_AccountsList.SelectedItem == null)
                 return;
-            Manager.GetAccount((IAccount)UX_AccountsList.SelectedItem);
+            Manager.ViewAccount((IAccount)UX_AccountsList.SelectedItem);
         }
 
         private void UX_AccountsList_DoubleClick(object sender, EventArgs e)

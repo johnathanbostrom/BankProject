@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Win32;
 
 namespace Bank
 {
@@ -18,6 +14,11 @@ namespace Bank
             Time = Time;
             Amount = amount;
             Description = description;
+        }
+
+        public override string ToString()
+        {
+            return "Withdrawal: $" + Amount + " at " + Time;
         }
     }
 }

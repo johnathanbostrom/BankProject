@@ -23,21 +23,36 @@ namespace Bank
 
         private void AccountViewForm_Load(object sender, EventArgs e)
         {
-            UpdateBalanceLabel(Manager.Balance);
+            UpdateBalanceLabel();
         }
 
 
         private void UX_depositButton_Click(object sender, EventArgs e)
         {
-            UpdateBalanceLabel(Manager.Deposit(10));
+            double amount;
+            if (!double.TryParse(UX_DepositText.Text, out amount))
+            {
+                MessageBox.Show("Please enter a valid amount to withdraw");
+                return;
+            }
+            Manager.Deposit(amount);
+            UpdateBalanceLabel();
             
         }
 
         private void ux_withrawButton_Click(object sender, EventArgs e)
         {
+            double amount;
+            if (!double.TryParse(UX_WithdrawText.Text, out amount))
+            {
+                MessageBox.Show("Please enter a valid amount to withdraw");
+                return;
+            }
+
             try
             {
-                UpdateBalanceLabel(Manager.Withdraw(10));
+                Manager.Withdraw(amount);
+                UpdateBalanceLabel();
             }
             catch (UserInputException uie)
             {
@@ -45,16 +60,12 @@ namespace Bank
             }   
         }
 
-        public void UpdateBalanceLabel(double d)
-        {
-            UX_BalanceLabel.Text = "Balance: " + d;
-        }
-
         private void UX_transferButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Manager.Transfer();
+                Manager.ShowTransferForm();
+                UpdateBalanceLabel();
             }
             catch (UserInputException uie)
             {
@@ -62,5 +73,9 @@ namespace Bank
             }
         }
 
+        public void UpdateBalanceLabel()
+        {
+            UX_BalanceLabel.Text = "Balance: " + Manager.Balance;
+        }
     }
 }

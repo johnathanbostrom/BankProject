@@ -25,9 +25,15 @@ namespace Bank
         private void UX_OKButton_Click(object sender, EventArgs e)
         {
             if (UX_AccountList.SelectedItem == null)
-                throw new UserInputException("Plese select an Account to transfer funds to.");
-            if(!double.TryParse(UX_DepositInput.Text, out Amount))
-                throw new UserInputException("Please enter an amount to transfer.");
+            {
+                MessageBox.Show("Plese select an Account to transfer funds to.");
+                return;
+            }
+            if (!double.TryParse(UX_DepositInput.Text, out Amount))
+            {
+                MessageBox.Show("Please enter an amount to transfer.");
+                return;
+            }
             AccountSelected = (Guid)UX_AccountList.SelectedItem;
             DialogResult = DialogResult.OK;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +11,11 @@ namespace Bank
     {
         private Dictionary<string, User> _userDictionary;
         private Dictionary<Guid, IAccount> _accounts;
+
+        public List<Guid> AccountIDs
+        {
+            get { return _accounts.Keys.ToList(); }
+        } 
 
         public BankData()
         {
@@ -23,7 +29,24 @@ namespace Bank
             _accounts = accounts;
         }
 
-        public User GetUser(string userId, string password)
+        public void AddAccount(string userId, IAccount account)
+        {
+            _accounts.Add(account.AccountID, account);
+            _userDictionary[userId].Accounts.Add(account);
+        }
+
+        public void RemoveAccount(string userID, IAccount account)
+        {
+            _accounts.Remove(account.AccountID);
+            _userDictionary[userID].Accounts.Remove(account);
+        }
+
+        public IAccount GetAccount(Guid id)
+        {
+            return _accounts[id];
+        }
+
+        public User GetUserAccountByPassword(string userId, string password)
         {
             if (!_userDictionary.ContainsKey(userId))
                 throw new UserInputException("That user could not be found.");

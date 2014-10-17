@@ -18,5 +18,10 @@ namespace Bank
             Amount = amount;
             Description = description;
         }
+
+        public override string ToString()
+        {
+            return "Deposit: $" + Amount + " at " + Time;
+        }
     }
 }

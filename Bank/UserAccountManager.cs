@@ -13,12 +13,15 @@ namespace Bank
         private User _userAccount;
         private BankManager _bankManager;
 
-        public readonly List<IAccount> Accounts; 
+        public List<IAccount> Accounts
+        {
+            get { return _userAccount.Accounts; }
+        }
+
 
         public UserAccountManager(User u, BankManager bankManager)
         {
             _userAccount = u;
-            Accounts = u.Accounts;
             _bankManager = bankManager;
         }
 
@@ -30,8 +33,7 @@ namespace Bank
                 return;
             string accountType = acf.TypeSelected;
             IAccount account = CreateAccount(accountType);
-            Accounts.Add(account);
-
+            _bankManager.AddAccount(_userAccount.UserName, account);
         }
 
         //use reflection to create the proper type of account based on the user's selection
@@ -52,10 +54,10 @@ namespace Bank
                 return;
             if (account.Balance != 0)
                 throw new UserInputException("Cannot close an account with a non zero balance");
-            Accounts.Remove(account);
+            _bankManager.RemoveAccount(_userAccount.UserName, account);
         }
 
-        public void GetAccount(IAccount account)
+        public void ViewAccount(IAccount account)
         {
             AccountManager am = new AccountManager(account, _bankManager);
             new AccountViewForm(am).Show();

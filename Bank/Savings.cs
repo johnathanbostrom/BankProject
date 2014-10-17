@@ -23,7 +23,7 @@ namespace Bank
         
         public Savings()
         {
-            AccountID = new Guid();
+            AccountID = Guid.NewGuid();
             Balance = 0;
             TransactionHistory = new List<ITransaction>();
         }

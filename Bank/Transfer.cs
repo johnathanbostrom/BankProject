@@ -23,5 +23,16 @@ namespace Bank
             From = from;
             To = to;
         }
+
+        public override string ToString()
+        {
+            return "Transfer: $" + Amount + " from Account " + getSmallGuid(From) + " to Account " + getSmallGuid(To) +" on " + Time;
+        }
+
+        private string getSmallGuid(Guid guid)
+        {
+            string s = guid.ToString();
+            return s.Substring(0, Math.Min(s.Length, 8));
+        }
     }
 }
