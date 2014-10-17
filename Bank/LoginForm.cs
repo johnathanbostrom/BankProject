@@ -22,7 +22,7 @@ namespace Bank
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            UX_PasswordBox.PasswordChar = '*';
         }
 
         private void UX_Button_Click(object sender, EventArgs e)

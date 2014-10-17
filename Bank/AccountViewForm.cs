@@ -32,7 +32,7 @@ namespace Bank
             double amount;
             if (!double.TryParse(UX_DepositText.Text, out amount))
             {
-                MessageBox.Show("Please enter a valid amount to withdraw");
+                MessageBox.Show("Please enter a valid amount to deposit");
                 return;
             }
             Manager.Deposit(amount);

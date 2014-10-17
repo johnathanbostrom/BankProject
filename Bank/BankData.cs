@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Bank
 {
@@ -53,6 +55,13 @@ namespace Bank
             if (!_userDictionary[userId].CheckPassword(password))
                 throw new UserInputException("Password Incorrect.");
             return _userDictionary[userId];
+        }
+
+        public void showXML()
+        {
+            _userDictionary.Values.ToList();
+            XElement xml = new XElement("items", _userDictionary.Select(x => new XElement("item", new XAttribute("id", x.Key), new XAttribute("value", x.Value))));
+            MessageBox.Show(xml.ToString());
         }
     }
 }
